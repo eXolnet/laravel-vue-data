@@ -48,10 +48,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Exolnet\\Skeleton\\SkeletonServiceProvider"
+                "Exolnet\\VueData\\VueDataServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Exolnet\\Skeleton\\SkeletonFacade"
+                "Vue": "Exolnet\\VueData\\Facades\\Vue"
             }
         }
     }
