@@ -1,37 +1,68 @@
-# :package_name
+# laravel-vue-data
 
-[![Latest Stable Version](https://poser.pugx.org/eXolnet/:package_name/v/stable?format=flat-square)](https://packagist.org/packages/eXolnet/:package_name)
+[![Latest Stable Version](https://poser.pugx.org/eXolnet/laravel-vue-data/v/stable?format=flat-square)](https://packagist.org/packages/eXolnet/laravel-vue-data)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/eXolnet/:package_name/master.svg?style=flat-square)](https://travis-ci.org/eXolnet/:package_name)
-[![Total Downloads](https://img.shields.io/packagist/dt/eXolnet/:package_name.svg?style=flat-square)](https://packagist.org/packages/eXolnet/:package_name)
+[![Build Status](https://img.shields.io/github/workflow/status/eXolnet/laravel-vue-data/tests?label=tests&style=flat-square)](https://github.com/eXolnet/laravel-vue-data/actions?query=workflow%3Atests)
+[![Total Downloads](https://img.shields.io/packagist/dt/eXolnet/laravel-vue-data.svg?style=flat-square)](https://packagist.org/packages/eXolnet/laravel-vue-data)
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values, then delete this line.
-
-:package_description
+Adds utilities to easily pass data from Laravel to Vue.
 
 ## Installation
 
 Require this package with composer:
 
 ```
-composer require exolnet/:package_name
+composer require exolnet/laravel-vue-data
 ```
 
 If you don't use package auto-discovery, add the service provider to the ``providers`` array in `config/app.php`:
 
 ```
-Exolnet\Skeleton\SkeletonServiceProvider::class
+Exolnet\VueData\VueDataServiceProvider::class
 ```
 
 And the facade to the ``facades`` array in `config/app.php`: 
 
 ```
-'Skeleton' => Exolnet\Skeleton\SkeletonFacade::class
+'Vue' => Exolnet\VueData\Facades\Vue::class
 ```
 
 ## Usage
 
-Explain how to use your package.
+### Define variables
+
+First, you need to devine variable that will be available in your Vue application.
+
+In your PHP code:
+
+```php
+Vue::put('variable', 'value')
+```
+
+In a Blade view:
+
+```
+@vue('variable', 'value)
+```
+
+### Make variables available
+
+In your base layout, add the following view before your main `app.js` to make the variables available:
+
+```
+@include('view-data::variables')
+```
+
+### Use variables
+
+In your `app.js`, use the variables defined when they are available:
+
+```js
+new Vue({
+    el: '#app',
+    data: () => window.App || {},
+});
+```
 
 ## Testing
 
@@ -51,7 +82,7 @@ If you discover any security related issues, please email security@exolnet.com i
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Alexandre D’Eschambeault](https://github.com/xel1045)
 - [All Contributors](../../contributors)
 
 ## License

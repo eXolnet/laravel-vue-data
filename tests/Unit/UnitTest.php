@@ -1,6 +1,6 @@
 <?php
 
-namespace Exolnet\Skeleton\Tests\Unit;
+namespace Exolnet\VueData\Tests\Unit;
 
 use Mockery;
 use PHPUnit\Framework\TestCase;
