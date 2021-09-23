@@ -42,7 +42,7 @@ Vue::put('variable', 'value')
 In a Blade view:
 
 ```
-@vue('variable', 'value)
+@vue('variable', 'value')
 ```
 
 ### Make variables available
