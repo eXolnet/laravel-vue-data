@@ -28,6 +28,23 @@ class ViewVariablesTest extends TestCase
         $html = trim(view('vue-data::variables')->render());
 
         $this->assertNotEmpty($html);
+        $this->assertStringContainsString('<script>', $html);
+        $this->assertStringContainsString('window.App', $html);
+        $this->assertStringContainsString('{"variable":"value"}', $html);
+    }
+
+    /**
+     * @return void
+     * @test
+     */
+    public function testVariablesWithNonce(): void
+    {
+        Vue::put('variable', 'value');
+
+        $html = trim(view('vue-data::variables', ['nonce' => 'abc'])->render());
+
+        $this->assertNotEmpty($html);
+        $this->assertStringContainsString('<script nonce="abc">', $html);
         $this->assertStringContainsString('window.App', $html);
         $this->assertStringContainsString('{"variable":"value"}', $html);
     }
