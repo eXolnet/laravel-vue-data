@@ -50,7 +50,7 @@ In a Blade view:
 In your base layout, add the following view before your main `app.js` to make the variables available:
 
 ```
-@include('view-data::variables')
+@include('vue-data::variables')
 ```
 
 ### Use variables
