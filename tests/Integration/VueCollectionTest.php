@@ -8,7 +8,6 @@ class VueCollectionTest extends TestCase
 {
     /**
      * @return void
-     * @test
      */
     public function testVueIsACollection(): void
     {
@@ -19,7 +18,6 @@ class VueCollectionTest extends TestCase
 
     /**
      * @return void
-     * @test
      */
     public function testVueIsASingleton(): void
     {

@@ -8,7 +8,6 @@ class ViewVariablesTest extends TestCase
 {
     /**
      * @return void
-     * @test
      */
     public function testEmptyVariables(): void
     {
@@ -19,7 +18,6 @@ class ViewVariablesTest extends TestCase
 
     /**
      * @return void
-     * @test
      */
     public function testVariablesAreDefined(): void
     {
@@ -35,7 +33,6 @@ class ViewVariablesTest extends TestCase
 
     /**
      * @return void
-     * @test
      */
     public function testVariablesWithNonce(): void
     {
