@@ -9,7 +9,6 @@ class ViewDirectiveTest extends TestCase
 {
     /**
      * @return void
-     * @test
      */
     public function testVueDirective(): void
     {
